@@ -20,6 +20,23 @@ namespace Helloworld_001
 
             int totalCount = selectElements.Count;
             MessageBox.Show(" ban da chon " + totalCount.ToString() + " elements");
+
+            string IdList = "danh sach phan tu cua doi tuong: \n ";
+            foreach (ElementId e1 in selectElements)
+            {
+                IdList = IdList + e1.ToString() + "\n";
+            }
+            MessageBox.Show(IdList);
+
+            XYZ p1 = uidoc.Selection.PickPoint();
+            XYZ p2 = uidoc.Selection.PickPoint();
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine(p1.ToString());
+            sb.AppendLine(p2.ToString());
+
+            MessageBox.Show("ban da chon cac diem: " + sb.ToString());
+
             return Result.Succeeded;
         }
     }
